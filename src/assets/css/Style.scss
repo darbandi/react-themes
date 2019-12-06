@@ -1,0 +1,49 @@
+@import "./Variables";
+@import "./Mixins";
+
+body {
+  margin: 0;
+  background-image: url("./../../logo.svg");
+  * {
+    font-family: IranSans;
+  }
+}
+
+.description {
+  @include themify() {
+    color: themed("textColor");
+  }
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  @include themify() {
+    background-color: themed("backgroundColor");
+  }
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.btn-custom {
+  @include themify() {
+    background-color: themed("btnBgColor");
+    color: themed("btnTxtColor");
+    padding: themed("btnPadding");
+  }
+}

@@ -1,0 +1,30 @@
+$themes: (
+  light: (
+    backgroundColor: #fff,
+    textColor: #333,
+    btnBgColor: #333,
+    btnTxtColor: #fff,
+    btnPadding: 10px 20px
+  ),
+  dark: (
+    backgroundColor: #333,
+    textColor: #fff,
+    btnBgColor: #fff,
+    btnTxtColor: #333,
+    btnPadding: 10px 20px
+  )
+);
+
+@font-face {
+  font-family: "IranSans";
+  src: url("./../fonts/IRANSansWeb\(FaNum\).ttf");
+}
+
+:export {
+  @each $a, $v in $themes {
+    @each $color, $value in $v {
+      #{$a + '_' + unquote($color)}: $value;
+    }
+  }
+}
+
