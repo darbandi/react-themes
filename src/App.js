@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withTheme, getScssVariable } from "./withTheme";
+import { withTheme, getScssVariable } from "./wrappers/withTheme";
 import logo from './logo.svg';
 
 class App extends Component {
@@ -13,7 +13,7 @@ class App extends Component {
     const themeName = props.themeName;
 
     this.state = {
-      theme: "theme-" + themeName,
+      theme: `theme-${themeName}`,
       themeName,
     }
   }
@@ -54,15 +54,19 @@ class App extends Component {
     return (
       <div className={["App", theme].join(" ")}>
         <header className="App-header">
+
           {/* image */}
           <img src={logo} className="App-logo" alt="logo" />
+
           {/* description */}
           <p className="description">
             قالب سایت به صورت داینامیک
           </p>
+
           <p className="description">
             <bdi>قالب جاری '{themeName}'</bdi>
           </p>
+
           {/* link */}
           <a
             style={{ color: getScssVariable("backgroundColor") }}
@@ -72,13 +76,13 @@ class App extends Component {
             rel="noopener noreferrer"
           >
           </a>
+
           {/* button */}
           <button className="btn-custom" onClick={this.changeTheme}>تغییر قالب</button>
         </header>
       </div>
-    );
+    )
   }
-
 }
 
 export default withTheme(App);

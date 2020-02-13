@@ -19,7 +19,7 @@ $themes: (
   font-family: "IranSans";
   src: url("./../fonts/IRANSansWeb\(FaNum\).ttf");
 }
-
+// Output all variables to access all files
 :export {
   @each $a, $v in $themes {
     @each $color, $value in $v {

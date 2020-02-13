@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import qs from 'qs';
-import scssVariables from "./assets/css/Style.scss";
+import scssVariables from "./../assets/css/Style.scss";
 
 const withTheme = WrappedComponent => {
 
